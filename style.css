@@ -4,10 +4,17 @@
     --MainborderW: 3px;
 }
 
+* {
+    font-family: 'Varela Round', sans-serif;
+}
+
+h1 {
+    font-family: 'Bubblegum Sans', cursive;
+}
+
 html {
     background-color: #BAA06F;
 }
-
 
 body {
     display: flex;
@@ -19,6 +26,7 @@ body {
 
 input, textarea {
     outline: none;
+    color: black;
 }
 
 input {
@@ -64,6 +72,10 @@ textarea {
     background-color: burlywood;
     border: var(--MainborderW) solid var(--border-color);
     border-radius: 6px;
+}
+
+#nameinput {
+    width: 200px;
 }
 
 @media only screen and (max-width: 500px) {

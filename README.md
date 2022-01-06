@@ -8,3 +8,8 @@ Clear - Clears both input fields\
 Delete - Deletes local memory\
 Export - Creates file that user can download\
 Import - Reads text file then displays it
+
+## Instalation:
+*Download\
+*Extract\
+*Open index.html to use

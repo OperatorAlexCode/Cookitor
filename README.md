@@ -1,7 +1,7 @@
 # Cookitor
 Cookitor is a text editor which stores the text + text name using cookies.
 
-Instructions:
+# Instructions:
 Save - Saves data localy
 Load - Loads local memory
 Clear - Clears both input fields

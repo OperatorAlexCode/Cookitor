@@ -20,8 +20,8 @@ function download() {
             saveAs(file, Name);
         }
         else {
-            let Name = decodeURIComponent(temp[0].slice(5))+".txt";
-            let file = new Blob([decodeURIComponent(temp[1].slice(5))],{ type:"text/plain;charset=utf-8"});
+            let Name = decodeURIComponent(temp[1].slice(5))+".txt";
+            let file = new Blob([decodeURIComponent(temp[0].slice(5))],{ type:"text/plain;charset=utf-8"});
             saveAs(file, Name);
         }
     }

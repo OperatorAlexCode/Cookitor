@@ -37,8 +37,8 @@ function Save() {
     }
     let tempName = encodeURIComponent(NameInput.value);
     let tempBody = encodeURIComponent(Input.value);
-    document.cookie = "name="+tempName+"; SameSite=None; Secure; path=/";
-    document.cookie = "data="+tempBody+"; SameSite=None; Secure; path=/";
+    document.cookie = "name="+tempName+"; SameSite=None; path=/";
+    document.cookie = "data="+tempBody+"; SameSite=None; path=/";
     window.alert("Data Saved");
 }
 
@@ -73,8 +73,8 @@ function Clear() {
 
 function Delete() {
     if (confirm("Confirm Delete") === true) {
-        document.cookie = "name=; expires=Thu, 20 April 0690 00:00:00 UTC; SameSite=None; Secure;path=/";
-        document.cookie = "data=; expires=Thu, 20 April 0690 00:00:00 UTC; SameSite=None; Secure;path=/";
+        document.cookie = "name=; expires=Thu, 20 April 0690 00:00:00 UTC; SameSite=None;path=/";
+        document.cookie = "data=; expires=Thu, 20 April 0690 00:00:00 UTC; SameSite=None;path=/";
         window.alert("Succesfully Deleted Memory");
     }
 }

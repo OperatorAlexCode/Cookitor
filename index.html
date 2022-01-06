@@ -9,18 +9,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Cookitor</h1>
+    <h1 class="title">Cookitor</h1>
     <input type="text" placeholder="name" id="nameinput" autocomplete="off">
     <textarea cols="70" rows="20" id="Input" autocomplete="off"></textarea>
     <div class="buttons">
         <button id="save">Save</button>
         <button id="Load">Load</button>
         <button id="Clear">Clear</button>
-        <button id="check">check</button>
+        <!-- <button id="check">check</button> -->
         <button id="print">Export</button>
         <button id="Import">Import</button>
         <input type="file" id="ghost" style="display: none;" accept=".txt">
     </div>
+    <div>
+        <p></p>
+    </div>
+
     <script src="code.js"></script>
     <script src="FileSaver.js"></script>
 </body>

@@ -3,11 +3,11 @@ const Input = document.getElementById("Input");
 const NameInput = document.getElementById("nameinput");
 const FileInput = document.getElementById("ghost");
 
-document.getElementById("print").addEventListener("click", download);
-document.getElementById("Clear").addEventListener("click", Clear);
-document.getElementById("Load").addEventListener("click", Load);
 document.getElementById("save").addEventListener("click", Save);
-// document.getElementById("check").addEventListener("click", Check);
+document.getElementById("Load").addEventListener("click", Load);
+document.getElementById("Clear").addEventListener("click", Clear);
+document.getElementById("delete").addEventListener("click", Delete);
+document.getElementById("print").addEventListener("click", download);
 document.getElementById("Import").addEventListener("click", Import);
 
 //With the help from Filesaver.js this function downloads a specified text file
@@ -64,10 +64,18 @@ function LoadData() {
 
 //Used to clear the data by deleting the cookie
 function Clear() {
-    if (confirm("Clear Data?") === true) {
+    if (confirm("Confirm Clear") === true) {
+        NameInput.value =  "";
+        Input.value = "";
+        window.alert("Succesfully Cleared");
+    }
+}
+
+function Delete() {
+    if (confirm("Confirm Delete") === true) {
         document.cookie = "name=; expires=Thu, 20 April 0690 00:00:00 UTC; SameSite=None; Secure;path=/";
         document.cookie = "data=; expires=Thu, 20 April 0690 00:00:00 UTC; SameSite=None; Secure;path=/";
-        window.alert("Cleared Data");
+        window.alert("Succesfully Deleted Memory");
     }
 }
 
@@ -86,10 +94,3 @@ function Import() {
 }
 
 LoadData();
-
-//Debugging code
-// function Check() {
-//     console.log(document.cookie);
-// }
-
-// Check();

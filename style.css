@@ -1,7 +1,13 @@
 :root {
     --Height: 100vh;
     --border-color: black;
+    --MainborderW: 3px;
 }
+
+html {
+    background-color: #BAA06F;
+}
+
 
 body {
     display: flex;
@@ -15,13 +21,23 @@ input, textarea {
     outline: none;
 }
 
+input {
+    border: var(--MainborderW) solid var(--border-color);
+    border-radius: 4px;
+}
+
+textarea {
+    border: var(--MainborderW) solid var(--border-color);
+    border-radius: 6px;
+}
+
 button {
     appearance: none;
-    border: 2px solid var(--border-color);
+    border: var(--MainborderW) solid var(--border-color);
     border-radius: 5px;
     color: black;
-    width: 50px;
-    height: 22px;
+    width: 60px;
+    height: 30px;
     text-align: center;
 }
 
@@ -34,6 +50,24 @@ textarea {
 .buttons {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 10px;
+    margin-bottom: 26px;
 }
 
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    text-align: center;
+    background-color: burlywood;
+    border: var(--MainborderW) solid var(--border-color);
+    border-radius: 6px;
+}
+
+@media only screen and (max-width: 500px) {
+    .info {
+        width: 180px;
+    }
+}

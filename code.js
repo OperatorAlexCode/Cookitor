@@ -14,9 +14,16 @@ document.getElementById("Import").addEventListener("click", Import);
 function download() {
     if (document.cookie) {
         let temp = document.cookie.split("; ");
-        let Name = decodeURIComponent(temp[0].slice(5))+".txt";
-        let file = new Blob([decodeURIComponent(temp[1].slice(5))],{ type:"text/plain;charset=utf-8"});
-        saveAs(file, Name);
+        if (temp[0].includes("name=")) {
+            let Name = decodeURIComponent(temp[0].slice(5))+".txt";
+            let file = new Blob([decodeURIComponent(temp[1].slice(5))],{ type:"text/plain;charset=utf-8"});
+            saveAs(file, Name);
+        }
+        else {
+            let Name = decodeURIComponent(temp[0].slice(5))+".txt";
+            let file = new Blob([decodeURIComponent(temp[1].slice(5))],{ type:"text/plain;charset=utf-8"});
+            saveAs(file, Name);
+        }
     }
     else {
         alert("ERROR:Can't Export");
@@ -39,26 +46,32 @@ function Save() {
     let tempBody = encodeURIComponent(Input.value);
     document.cookie = "name="+tempName+"; SameSite=None; path=/";
     document.cookie = "data="+tempBody+"; SameSite=None; path=/";
-    window.alert("Data Saved");
+    alert("Data Saved");
 }
 
 //Used to load data, if there is any, from the cookie
 function Load() {
-    if (document.cookie) {
+    if (document.cookie && confirm("Confirm load") === true) {
         LoadData();
         // window.alert("Data Loaded");
     }
     else {
-        window.alert("ERROR:Can't load data");
+        alert("ERROR:Can't load data");
     }
 }
 
-//Used to load the data the cookies
+//Used to load data from the cookies
 function LoadData() {
     if (document.cookie) {
         let temp = document.cookie.split("; ");
-        NameInput.value =  decodeURIComponent(temp[0].slice(5));
-        Input.value = decodeURIComponent(temp[1].slice(5));
+        if (temp[0].includes("name=")) {
+            NameInput.value =  decodeURIComponent(temp[0].slice(5));
+            Input.value = decodeURIComponent(temp[1].slice(5));
+        }
+        else {
+            NameInput.value =  decodeURIComponent(temp[1].slice(5));
+            Input.value = decodeURIComponent(temp[0].slice(5));
+        }
     }
 } 
 
@@ -67,7 +80,7 @@ function Clear() {
     if (confirm("Confirm Clear") === true) {
         NameInput.value =  "";
         Input.value = "";
-        window.alert("Succesfully Cleared");
+        alert("Succesfully Cleared");
     }
 }
 
@@ -75,7 +88,7 @@ function Delete() {
     if (confirm("Confirm Delete") === true) {
         document.cookie = "name=; expires=Thu, 20 April 0690 00:00:00 UTC; SameSite=None;path=/";
         document.cookie = "data=; expires=Thu, 20 April 0690 00:00:00 UTC; SameSite=None;path=/";
-        window.alert("Succesfully Deleted Memory");
+        alert("Succesfully Deleted Memory");
     }
 }
 

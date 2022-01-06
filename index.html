@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookitor</title>
+    <link rel="icon" href="cookie.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Cookitor</h1>
+    <input type="text" placeholder="name" id="nameinput" autocomplete="off">
+    <textarea cols="70" rows="20" id="Input" autocomplete="off"></textarea>
+    <div class="buttons">
+        <button id="save">Save</button>
+        <button id="Load">Load</button>
+        <button id="Clear">Clear</button>
+        <button id="check">check</button>
+        <button id="print">Export</button>
+        <button id="Import">Import</button>
+        <input type="file" id="ghost" style="display: none;" accept=".txt">
+    </div>
+    <script src="code.js"></script>
+    <script src="FileSaver.js"></script>
+</body>
+</html>

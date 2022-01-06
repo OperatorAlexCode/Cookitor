@@ -1,0 +1,39 @@
+:root {
+    --Height: 100vh;
+    --border-color: black;
+}
+
+body {
+    display: flex;
+    height: var(--Height);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+input, textarea {
+    outline: none;
+}
+
+button {
+    appearance: none;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    color: black;
+    width: 50px;
+    height: 22px;
+    text-align: center;
+}
+
+textarea {
+    resize: none;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+

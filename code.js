@@ -12,22 +12,9 @@ document.getElementById("Import").addEventListener("click", Import);
 
 //With the help from Filesaver.js this function downloads a specified text file
 function download() {
-    if (document.cookie) {
-        let temp = document.cookie.split("; ");
-        if (temp[0].includes("name=")) {
-            let Name = decodeURIComponent(temp[0].slice(5))+".txt";
-            let file = new Blob([decodeURIComponent(temp[1].slice(5))],{ type:"text/plain;charset=utf-8"});
-            saveAs(file, Name);
-        }
-        else {
-            let Name = decodeURIComponent(temp[1].slice(5))+".txt";
-            let file = new Blob([decodeURIComponent(temp[0].slice(5))],{ type:"text/plain;charset=utf-8"});
-            saveAs(file, Name);
-        }
-    }
-    else {
-        alert("ERROR:Can't Export");
-    }
+    let Name = NameInput+".txt";
+    let file = new Blob([Input],{ type:"text/plain;charset=utf-8"});
+    saveAs(file, Name);
 }
 
 //Used to encode the text and save it as a cookie
@@ -49,7 +36,7 @@ function Save() {
     alert("Data Saved");
 }
 
-//Used to load data, if there is any, from the cookie
+//Used to load data from the current inputs
 function Load() {
     if (document.cookie && confirm("Confirm load") === true) {
         LoadData();

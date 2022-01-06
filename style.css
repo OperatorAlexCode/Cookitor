@@ -10,6 +10,9 @@
 
 h1 {
     font-family: 'Bubblegum Sans', cursive;
+    font-size: xxx-large;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 html {
@@ -59,6 +62,7 @@ textarea {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 26px;
 }
@@ -67,19 +71,55 @@ textarea {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 400px;
+    width: 370px;
     text-align: center;
     background-color: burlywood;
     border: var(--MainborderW) solid var(--border-color);
     border-radius: 6px;
+    padding: 10px;
 }
 
 #nameinput {
     width: 200px;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 800px) {
+    textarea {
+        width: 85%;
+        padding: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        word-wrap: normal;
+    }
+}
+
+@media only screen and (max-width: 600px) {
     .info {
-        width: 180px;
+        width: 75%;
+        padding: 10px;
+        margin: auto;
+        word-wrap: normal;
+    }
+
+    textarea {
+        width: 85%;
+    }
+
+    .buttons {
+        width: 200px
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    h1 {
+        font-size: xx-large;
+    }
+
+    .info {
+        width: 68%;
+    }
+
+    textarea {
+        width: 85%;
     }
 }

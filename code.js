@@ -12,8 +12,8 @@ document.getElementById("Import").addEventListener("click", Import);
 
 //With the help from Filesaver.js this function downloads a specified text file
 function download() {
-    let Name = NameInput+".txt";
-    let file = new Blob([Input],{ type:"text/plain;charset=utf-8"});
+    let Name = NameInput.value+".txt";
+    let file = new Blob([Input.value],{ type:"text/plain;charset=utf-8"});
     saveAs(file, Name);
 }
 

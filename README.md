@@ -15,5 +15,5 @@ Import - Reads text file then displays it
 *Open index.html to use
 
 ## Credits
-I use FileSaver.js, which's not made by me, link to the repository https://github.com/eligrey/FileSaver.js\
+I use FileSaver.js, which's not made by me, link to their repository https://github.com/eligrey/FileSaver.js \
 The rest is made by me

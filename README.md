@@ -13,3 +13,7 @@ Import - Reads text file then displays it
 *Download\
 *Extract\
 *Open index.html to use
+
+## Credits
+I use FileSaver.js\
+The rest is made by me
